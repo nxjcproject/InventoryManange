@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\InventoryManange\InventoryManange.Infrastructure\bin\Debug\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\InventoryManange\InventoryManange.Infrastructure\bin\Debug\InventoryManange.Infrastructure.pdb
+C:\Users\Administrator\Desktop\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.pdb
+C:\Users\Administrator\Desktop\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Infrastructure\bin\Debug\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Infrastructure\bin\Debug\InventoryManange.Infrastructure.pdb
+C:\Users\Administrator\Desktop\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.pdb

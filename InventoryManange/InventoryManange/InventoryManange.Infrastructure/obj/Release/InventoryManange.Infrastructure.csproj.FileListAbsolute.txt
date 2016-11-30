@@ -1,0 +1,8 @@
+C:\Users\Administrator\Desktop\InventoryManange准备发布\InventoryManange\InventoryManange\InventoryManange.Infrastructure\bin\Release\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\InventoryManange准备发布\InventoryManange\InventoryManange\InventoryManange.Infrastructure\bin\Release\InventoryManange.Infrastructure.pdb
+C:\Users\Administrator\Desktop\InventoryManange准备发布\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\InventoryManange准备发布\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.pdb
+C:\Users\Administrator\Desktop\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Infrastructure\bin\Release\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Infrastructure\bin\Release\InventoryManange.Infrastructure.pdb
+C:\Users\Administrator\Desktop\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.pdb

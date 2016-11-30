@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManange.Infrastructure", "InventoryManange.Infrastructure\InventoryManange.Infrastructure.csproj", "{0ACB89A3-0085-472F-8531-8FDBCC74C9B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManange.Service", "InventoryManange.Service\InventoryManange.Service.csproj", "{056F5C2D-3B56-42B6-9AB5-4ADED115F27A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManange.Web", "InventoryManange.Web\InventoryManange.Web.csproj", "{4011AAE5-A965-4FE0-AC58-8019DCC3D2A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ACB89A3-0085-472F-8531-8FDBCC74C9B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACB89A3-0085-472F-8531-8FDBCC74C9B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ACB89A3-0085-472F-8531-8FDBCC74C9B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ACB89A3-0085-472F-8531-8FDBCC74C9B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{056F5C2D-3B56-42B6-9AB5-4ADED115F27A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{056F5C2D-3B56-42B6-9AB5-4ADED115F27A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{056F5C2D-3B56-42B6-9AB5-4ADED115F27A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{056F5C2D-3B56-42B6-9AB5-4ADED115F27A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4011AAE5-A965-4FE0-AC58-8019DCC3D2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4011AAE5-A965-4FE0-AC58-8019DCC3D2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4011AAE5-A965-4FE0-AC58-8019DCC3D2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4011AAE5-A965-4FE0-AC58-8019DCC3D2A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
