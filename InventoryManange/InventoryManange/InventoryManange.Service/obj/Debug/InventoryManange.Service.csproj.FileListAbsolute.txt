@@ -40,3 +40,17 @@ E:\1项目\物料平衡\InventoryManange发布版本\InventoryManange\InventoryM
 E:\1项目\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
 E:\1项目\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
 E:\1项目\物料平衡\InventoryManange发布版本\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb
+C:\Users\Administrator\Desktop\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.dll
+C:\Users\Administrator\Desktop\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.pdb
+C:\Users\Administrator\Desktop\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.pdb
+C:\Users\Administrator\Desktop\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
+C:\Users\Administrator\Desktop\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb
+H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.dll
+H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.pdb
+H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.dll
+H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.pdb
+H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
+H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
+H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb

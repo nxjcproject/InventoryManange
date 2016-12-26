@@ -26,15 +26,13 @@
 </head>
 <body>
    <div id="cc" class="easyui-layout"data-options="fit:true,border:false" >    
-         <div data-options="region:'west',split:true" style="width: 230px;">
+         <div data-options="region:'west',split:true" style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
-          <div id="toorBar" title="" style="height:28px;padding:10px;">
+          <div id="toorBar" title="" style="height:60px;padding:10px;">
     <div>
          <table>
                     <tr>
-
-
                         <td>组织机构:</td>
 <%--                        <td><input id="productLineName" class="easyui-textbox" style="width: 80px;" readonly="readonly" /></td>--%>
                         <td >                               
@@ -43,20 +41,21 @@
 
                          <td>标签名:</td>
                         <td >                               
-                            <input id="headvariableid"  class="easyui-textbox"  style="width:160px" data-options="panelHeight: 'auto'"/ />（*选填）</td>                
-                          
-                        
-                         <td>仓库名:</td> 
-                        <td ><input id="warehousename" class="easyui-combobox" editable="false" style="width:120px" />（*选填） </td>                
+                            <input id="headvariableid"  class="easyui-textbox"  style="width:100px" data-options="panelHeight: 'auto'"/ />（*选填）</td>                
+
+                         
+                  </tr>
+
+                </table> 
+                <table>
+                    <tr>
+                        <td>仓库名:</td> 
+                        <td ><input id="warehousename" class="easyui-combobox" editable="false" style="width:100px" />（*选填） </td>                
                                       
                            <td>
                             <a "javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="Query()">查询</a>
                         </td>
-                  <%--</tr>--%>
-                <%--</table> 
-                <table>--%>
-                    
-                        <td style="width:40px"></td>
+                        <td style="width:20px"></td>
                        <td>
                             <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="addFun()">添加</a>
                         </td>

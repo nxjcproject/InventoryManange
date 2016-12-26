@@ -25,11 +25,10 @@
 </head>
 <body>
     <div id="cc" class="easyui-layout"data-options="fit:true,border:false" >    
-         <div data-options="region:'west',split:true" style="width: 230px;">
+         <div data-options="region:'west',spilt:true" style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
-          <div id="toorBar" title="" style="height:56px;padding:10px;">
-            <div>
+          <div id="toorBar" title="" style="display: none;">
                 <table>
                     <tr>
                         <td>组织机构:</td>
@@ -59,9 +58,8 @@
                         </td>
                     </tr>
                 </table>         
-            </div>
 	    </div> 
-         <div data-options="region:'center'" style="padding:5px;background:#eee;">
+         <div id="reportTable" class="easyui-panel" data-options="region:'center',border:true," >
              <table id="grid_Main"class="easyui-datagrid"></table>
          </div>
         <div id="AddandEditor" class="easyui-window" title="添加盘库" data-options="modal:true,closed:true,iconCls:'icon-edit',minimizable:false,maximizable:false,collapsible:false,resizable:false" style="width:900px;height:400px;padding:10px 60px 20px 60px"> 

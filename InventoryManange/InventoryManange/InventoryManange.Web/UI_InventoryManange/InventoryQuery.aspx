@@ -20,7 +20,7 @@
 </head>
 <body>
    <div class="easyui-layout" data-options="fit:true,border:false">
-        <div data-options="region:'west',border:false " style="width: 230px;">
+        <div data-options="region:'west',border:false " style="width: 150px;">
             <ucl:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
        
@@ -58,24 +58,6 @@
                         </table>
                     </td>
                 </tr>
-                <%--<tr>
-                    <td>
-                        <table>
-                            <tr>
-                                 <td><a href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel',plain:true,disabled:true" onclick="ExportFileFun();">导出</a>
-                                </td>
-                                <td><a href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-printer',plain:true,disabled:true" onclick="PrintFileFun();">打印</a>
-                                </td>
-                                <td>
-                                    <div class="datagrid-btn-separator"></div>
-                                </td>
-                                <td>
-                                    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="RefreshRecordDataFun();">刷新</a>
-                                 </td>
-                            </tr>
-                        </table>                           
-                      </td>
-                </tr>--%>
             </table>
          </div>
        <div id="reportTable" class="easyui-panel" data-options="region:'center', border:true, collapsible:true, split:false">

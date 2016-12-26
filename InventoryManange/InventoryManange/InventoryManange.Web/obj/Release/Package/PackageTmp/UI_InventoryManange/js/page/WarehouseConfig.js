@@ -138,6 +138,10 @@ function Query() {
     //组织机构ID在函数onOrganisationTreeClick中已经获取
     mVariableid = $('#headvariableid').textbox('getText');
     mWarehousename = $('#warehousename').combobox('getText');
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
     $.ajax({
         type: "POST",
         url: "WarehouseConfigIndication.aspx/GetQueryData",
@@ -145,6 +149,7 @@ function Query() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
+            $.messager.progress('close');
             //mger.window('close');
             var myData = jQuery.parseJSON(msg.d);
             if (myData.total == 0) {
@@ -154,8 +159,11 @@ function Query() {
                 LoadMainDataGrid("last", myData);
             }
         },
-
+        beforeSend: function (XMLHttpRequest) {
+            win;
+        },
         error: function () {
+            $.messager.progress('close');
             $("#grid_Main").datagrid('loadData', []);
             $.messager.alert('失败', '获取数据失败');
         }

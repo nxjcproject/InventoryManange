@@ -4,7 +4,6 @@ var m_Count = 0;
 var m_TableList = [];
 var m_organizationId = "";
 var m_warehouseName = "";
-var mger = Object;
 $(document).ready(function () {
     //LoadProductionType('first');
     //loadOrganisationTree('first');
@@ -215,6 +214,10 @@ function QueryReportFun() {
     //    $.messager.alert('警告', '结束时间不能大于开始时间！');
     //    return;
     //}
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
     $.ajax({
         type: "POST",
         url: "InventoryQuery.aspx/GetInventory",
@@ -223,10 +226,10 @@ function QueryReportFun() {
         dataType: "json",
         beforeSend: function (XMLHttpRequest) {
               
-               mger = $.messager.alert('提示', "加载中...");
+            win;
             },
         success: function (msg) {
-            mger.window('close');
+            $.messager.progress('close');
             m_MsgData = jQuery.parseJSON(msg.d);
             if (m_MsgData.total == 0) {
                 $('#gridMain_ReportTemplate').datagrid('loadData', []);
@@ -237,6 +240,7 @@ function QueryReportFun() {
             }
         },
         error: function handleError() {
+            $.messager.progress('close');
             $('#gridMain_ReportTemplate').datagrid('loadData', []);
             $.messager.alert('失败', '获取数据失败');
         }

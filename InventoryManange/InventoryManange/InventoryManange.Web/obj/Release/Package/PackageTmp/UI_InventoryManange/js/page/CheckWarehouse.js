@@ -117,6 +117,10 @@ function Query() {
         mUrl = "CheckWarehouse.aspx/GetInventory";
         mdata = "{mOrganizationID:'" + mOrganizationID + "',beginTime:'" + beginTime + "',endTime:'" + endTime + "',wareHouseId:'" + wareHouseId + "'}";
     }
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
     $.ajax({
         type: "POST",
         url: mUrl,
@@ -124,6 +128,7 @@ function Query() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
+            $.messager.progress('close');
             //mger.window('close');
             m_MsgData = jQuery.parseJSON(msg.d);
             if (m_MsgData.total == 0) {
@@ -134,11 +139,11 @@ function Query() {
                 LoadDataGrid("last", m_MsgData);
             }
         },
-        //beforeSend: function (XMLHttpRequest) {
-        //    //alert('远程调用开始...');
-        //    mger = $.messager.alert('提示', "加载中...");
-        //},
+        beforeSend: function (XMLHttpRequest) {
+            win;
+        },
         error: function handleError() {
+            $.messager.progress('close');
             $('#grid_Main').datagrid('loadData', []);
             $.messager.alert('失败', '获取数据失败');
         }
