@@ -16,7 +16,7 @@ namespace InventoryManange.Service.InventoryManange
         {
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
-            string mySql = @"select Name as text from [dbo].[inventory_Warehouse] 
+            string mySql = @"select Name as text,LevelCode AS FormulaLevelCode,Id from [dbo].[inventory_Warehouse] 
                                        where OrganizationID=@organizationId
                                       ";
             SqlParameter sqlParameter = new SqlParameter("@organizationId", organizationId);
@@ -28,6 +28,8 @@ namespace InventoryManange.Service.InventoryManange
         { 
             string organizationIdNew=organizationID;
             string warehouseNameNew=warehouseName;
+            string FormulaLevelCode="";
+            string Id = "";
             DataTable idTable = GetProcessTypeInfo(organizationIdNew);
             DataTable table = new DataTable();
             DataTable getWarehouseTable;
@@ -42,6 +44,8 @@ namespace InventoryManange.Service.InventoryManange
             Decimal currentInventory;
             table.Columns.Add("WarehouseName", Type.GetType("System.String"));
             table.Columns.Add("OriginasitionID", Type.GetType("System.String"));
+            table.Columns.Add("Id", Type.GetType("System.String"));
+            table.Columns.Add("FormulaLevelCode", Type.GetType("System.String"));
             table.Columns.Add("benchmarksValue", Type.GetType("System.String"));
             table.Columns.Add("benchmarksTime", Type.GetType("System.DateTime"));
             table.Columns.Add("InputWarehouse", Type.GetType("System.Decimal"));
@@ -52,10 +56,18 @@ namespace InventoryManange.Service.InventoryManange
                 for (int i = 0; i < idTable.Rows.Count; i++)
                 {
                     warehouseNameNew = Convert.ToString(idTable.Rows[i][0]);
-                    
+                    FormulaLevelCode = Convert.ToString(idTable.Rows[i][1]);
+                    Id = Convert.ToString(idTable.Rows[i][2]);
                      getWarehouseTable = GetWarehouseId(organizationIdNew, warehouseNameNew);//仓库ID信息
                      getBenchmarksInformationTable = GetBenchmarksInformation(startTimeNew, getWarehouseTable);//盘库信息
-                     benchmarksValue = Convert.ToDecimal(getBenchmarksInformationTable.Rows[0][0]);//基准库存
+                     try
+                     {
+                         benchmarksValue = Convert.ToDecimal(getBenchmarksInformationTable.Rows[0][0]);//基准库存
+                     }
+                     catch
+                     {
+                         continue; 
+                     }
                      benchmarksTime = Convert.ToDateTime(getBenchmarksInformationTable.Rows[0][1]);//基准库存时间
                      getInputWarehouseTable = GetInputWarehouse(getBenchmarksInformationTable, startTimeNew, organizationIdNew);//入库信息
                      inputQuantity = GetInputQuantity(startTimeNew, getBenchmarksInformationTable, organizationIdNew, getInputWarehouseTable);//入库量
@@ -65,6 +77,8 @@ namespace InventoryManange.Service.InventoryManange
                     DataRow dr = table.NewRow();
                     dr["WarehouseName"] = warehouseNameNew;
                     dr["OriginasitionID"] = organizationIdNew;
+                    dr["Id"] = Id;
+                    dr["FormulaLevelCode"] = FormulaLevelCode;
                     dr["benchmarksValue"] = benchmarksValue;
                     dr["benchmarksTime"] = benchmarksTime;
                     dr["InputWarehouse"] = inputQuantity;
@@ -72,28 +86,6 @@ namespace InventoryManange.Service.InventoryManange
                     dr["CurrentInventory"] = currentInventory;
                     table.Rows.Add(dr);
                 }
-            }
-            else
-            {
-                
-                 getWarehouseTable = GetWarehouseId(organizationIdNew, warehouseNameNew);//仓库ID信息
-                 getBenchmarksInformationTable = GetBenchmarksInformation(startTimeNew, getWarehouseTable);//盘库信息
-                 benchmarksValue = Convert.ToDecimal(getBenchmarksInformationTable.Rows[0][0]);//基准库存
-                 benchmarksTime = Convert.ToDateTime(getBenchmarksInformationTable.Rows[0][1]);//基准库存时间
-                 getInputWarehouseTable = GetInputWarehouse(getBenchmarksInformationTable, startTimeNew, organizationIdNew);//入库信息
-                 inputQuantity = GetInputQuantity(startTimeNew, getBenchmarksInformationTable, organizationIdNew, getInputWarehouseTable);//入库量
-                 getOutputWarehouseTable = GetOutputWarehouse(getBenchmarksInformationTable, startTimeNew, organizationIdNew);//出库信息
-                 outputQuantity = GetOutputQuantity(startTimeNew, getBenchmarksInformationTable, organizationIdNew, getOutputWarehouseTable);//出库量
-                currentInventory = benchmarksValue + inputQuantity - outputQuantity;
-                DataRow dr = table.NewRow();
-                dr["WarehouseName"] = warehouseNameNew;
-                dr["OriginasitionID"] = organizationIdNew;
-                dr["benchmarksValue"] = benchmarksValue;
-                dr["benchmarksTime"] = benchmarksTime;
-                dr["InputWarehouse"] = inputQuantity;
-                dr["OutputWarehouse"] = outputQuantity;
-                dr["CurrentInventory"] = currentInventory;
-                table.Rows.Add(dr);
             }
             return table;
         }
@@ -115,9 +107,9 @@ namespace InventoryManange.Service.InventoryManange
             string ID = Convert.ToString(IdInformation.Rows[0][0]);
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
-            string mySql = @"select Value,MAX(TimeStamp) as TimeStamp,WarehouseId from [dbo].[inventory_CheckWarehouse] 
+            string mySql = @"select Value,TimeStamp as TimeStamp,WarehouseId from [dbo].[inventory_CheckWarehouse] 
                                        where TimeStamp<@startTime and WarehouseId=@IdInformation
-                                      group by Value,WarehouseId
+                                      order by TimeStamp desc
                                       ";
             SqlParameter[] myParameter = { new SqlParameter("@startTime", startTime), new SqlParameter("@IdInformation", ID) };
             DataTable table = dataFactory.Query(mySql, myParameter);

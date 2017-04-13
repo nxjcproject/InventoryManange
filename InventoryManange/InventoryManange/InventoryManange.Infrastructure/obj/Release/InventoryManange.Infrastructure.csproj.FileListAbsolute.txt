@@ -11,3 +11,8 @@ H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-mast
 H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.csprojResolveAssemblyReference.cache
 H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.dll
 H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.pdb
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Infrastructure\bin\Release\InventoryManange.Infrastructure.dll
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Infrastructure\bin\Release\InventoryManange.Infrastructure.pdb
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.csprojResolveAssemblyReference.cache
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.dll
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Release\InventoryManange.Infrastructure.pdb

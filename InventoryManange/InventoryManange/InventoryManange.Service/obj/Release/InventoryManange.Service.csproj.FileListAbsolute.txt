@@ -34,3 +34,12 @@ H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-mast
 H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.csprojResolveAssemblyReference.cache
 H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.dll
 H:\徐一帅项目\第一轮修改\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.pdb
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Release\InventoryManange.Service.dll
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Release\InventoryManange.Service.pdb
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Release\EasyUIJsonParser.dll
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Release\InventoryManange.Infrastructure.dll
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Release\SqlServerDataAdapter.dll
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Release\InventoryManange.Infrastructure.pdb
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.csprojResolveAssemblyReference.cache
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.dll
+E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.pdb

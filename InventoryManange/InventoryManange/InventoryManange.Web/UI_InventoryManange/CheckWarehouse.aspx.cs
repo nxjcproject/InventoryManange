@@ -37,21 +37,21 @@ namespace InventoryManange.Web.UI_InventoryManange
         {
             //mUserId
             DataTable table = CheckWarehouseService.GetInventoryNameTable(myOrganizationId);
-            string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
+            string json = EasyUIJsonParser.TreeGridJsonParser.DataTableToJsonByLevelCode(table,"LevelCode");
             return json;
         }
+        //[WebMethod]
+        //public static string GetInventory(string mOrganizationID,string beginTime, string endTime, string wareHouseId)
+        //{
+        //    DataTable table = CheckWarehouseService.InventoryWarehouseDataTable(mOrganizationID,beginTime, endTime, wareHouseId);
+        //    string json = EasyUIJsonParser.TreeGridJsonParser.DataTableToJsonByLevelCode(table, "LevelCode");
+        //    return json;
+        //}
         [WebMethod]
-        public static string GetInventory(string mOrganizationID,string beginTime, string endTime, string wareHouseId)
+        public static string GetInventoryAll(string mOrganizationID, string beginTime)
         {
-            DataTable table = CheckWarehouseService.InventoryWarehouseDataTable(mOrganizationID,beginTime, endTime, wareHouseId);
-            string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
-            return json;
-        }
-        [WebMethod]
-        public static string GetInventoryAll(string mOrganizationID, string beginTime, string endTime)
-        {
-            DataTable table = CheckWarehouseService.InventoryWarehouseDataTableAll(mOrganizationID, beginTime, endTime);
-            string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
+            DataTable table = CheckWarehouseService.InventoryWarehouseDataTableAll(mOrganizationID, beginTime);
+            string json = EasyUIJsonParser.TreeGridJsonParser.DataTableToJsonByLevelCode(table, "LevelCode");
             return json;
         }
         [WebMethod]
@@ -82,18 +82,18 @@ namespace InventoryManange.Web.UI_InventoryManange
             CheckWarehouseService.AddWarehouseSection(json,myName);
             return "success";
         }
+        //[WebMethod]
+        //public static string WindowWarehouse(string mOrganizationID, string beginTime, string endTime, string wareHouseWindowId)
+        //{
+        //    DataTable table = CheckWarehouseService.WindowWarehouseDataTable(mOrganizationID, beginTime, endTime,wareHouseWindowId);
+        //    string json = EasyUIJsonParser.TreeGridJsonParser.DataTableToJsonByLevelCode(table, "LevelCode");
+        //    return json;
+        //}
         [WebMethod]
-        public static string WindowWarehouse(string mOrganizationID, string beginTime, string endTime, string wareHouseWindowId)
+        public static string WindowWarehouseAll(string mOrganizationID, string beginTime)
         {
-            DataTable table = CheckWarehouseService.WindowWarehouseDataTable(mOrganizationID, beginTime, endTime,wareHouseWindowId);
-            string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
-            return json;
-        }
-        [WebMethod]
-        public static string WindowWarehouseAll(string mOrganizationID, string beginTime, string endTime)
-        {
-            DataTable table = CheckWarehouseService.WindowWarehouseDataTableAll(mOrganizationID, beginTime, endTime);
-            string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
+            DataTable table = CheckWarehouseService.WindowWarehouseDataTableAll(mOrganizationID, beginTime);
+            string json = EasyUIJsonParser.TreeGridJsonParser.DataTableToJsonByLevelCode(table, "LevelCode");
             return json;
         }
     }

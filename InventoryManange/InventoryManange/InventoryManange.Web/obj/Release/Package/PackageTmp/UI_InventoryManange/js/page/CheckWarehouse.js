@@ -6,13 +6,13 @@
 function InitialDate() {
     var nowDate = new Date();
     var beforeDate = new Date();
-    beforeDate.setDate(nowDate.getDate() - 30);
+    beforeDate.setDate(nowDate.getDate());
     var nowString = nowDate.getFullYear() + '-' + (nowDate.getMonth() + 1) + '-' + nowDate.getDate()  + " " + nowDate.getHours() + ":" + nowDate.getMinutes() + ":" + nowDate.getSeconds();
-    var beforeString = beforeDate.getFullYear() + '-' + (beforeDate.getMonth() + 1) + '-' + beforeDate.getDate()  + " 00:00:00";
+    var beforeString = beforeDate.getFullYear() + '-' + (beforeDate.getMonth() + 1) + '-' + beforeDate.getDate() + " " + nowDate.getHours() + ":" + nowDate.getMinutes() + ":" + nowDate.getSeconds();
     $('#startTime').datetimebox('setValue', beforeString);
-    $('#endTime').datetimebox('setValue', nowString);
-    $('#startTimeWindow').datetimebox('setValue', beforeString);
-    $('#endTimeWindow').datetimebox('setValue', nowString);
+    //$('#endTime').datetimebox('setValue', nowString);
+    $('#startTimeWindow').datetimebox('setValue', nowString);
+    //$('#endTimeWindow').datetimebox('setValue', nowString);
 }
 function onOrganisationTreeClick(node) {
     $('#organizationName').textbox('setText', node.text);
@@ -33,27 +33,15 @@ function PrcessTypeItem(mOrganizationId) {
         success: function (msg){
             var m_MsgData = jQuery.parseJSON(msg.d);
             var comboboxData = new Array();
-            comboboxData[0] = { "Id": "All", "text": "全部" };
-            for (i = 1; i < m_MsgData.rows.length + 1; i++) {
-                comboboxData[i] = m_MsgData.rows[i - 1];
-            }
             if (m_MsgData.total == 0) {
                 $.messager.alert('提示', '未查询到仓库', 'info');
             }
-            $('#comb_ProcessType').combobox({
-                data: comboboxData,
+            $('#comb_ProcessType').combotree({
+                data: m_MsgData,
                 valueField: 'Id',
                 textField: 'text',
                 onSelect: function (param) {
                     wareHouseId = param.Id;
-                }
-            });
-            $('#comb_ProcessTypeWindow').combobox({
-                data: comboboxData,
-                valueField: 'Id',
-                textField: 'text',
-                onSelect: function (param) {
-                    wareHouseWindowId = param.Id;
                 }
             });
         },
@@ -64,28 +52,29 @@ function PrcessTypeItem(mOrganizationId) {
 }
 function LoadDataGrid(type, myData) {
     if (type == "first") {
-        $('#grid_Main').datagrid({
+        $('#grid_Main').treegrid({
             columns: [[
-                    { field: 'Name', title: '仓库类型', width: 100 },                
+                    { field: 'Name', title: '仓库类型', width: 130 },                
                     {
                         field: 'Value', title: '库存值', width: 80, align: "right",
                     },
                     {
-                        field: 'TimeStamp', title: '启用时间', width: 160, align: "left",
+                        field: 'TimeStamp', title: '盘库时间', width: 160, align: "left",
                     },
                     { field: 'Editor', title: '编辑人', width: 80, align: "left" },
                     { field: 'EditTime', title: '编辑时间', width: 160, align: "left" },
                     {
                         field: 'edit', title: '编辑', width: 100, formatter: function (value, row, index) {
                             var str = "";
-                            str = '<a href="#" onclick="editWarehouse(\'' + row.ItemId + '\')"><img class="iconImg" src = "/lib/extlib/themes/images/ext_icons/notes/note_edit.png" title="编辑页面" onclick="editWarehouse(\'' + index+ '\')"/>编辑</a>';
-                            str = str + '<a href="#" onclick="deleteWarehouse(\'' + row.ItemId + '\')"><img class="iconImg" src = "/lib/extlib/themes/images/ext_icons/notes/note_delete.png" title="删除页面"  onclick="deleteWarehouse(\'' + row.Id + '\')"/>删除</a>';                           
+                            str = '<a href="#" onclick="editWarehouse(\'' + row.ItemId + '\')"><img class="iconImg" src = "/lib/extlib/themes/images/ext_icons/notes/note_edit.png" title="编辑页面" onclick="editWarehouse(true,\'' + row.ItemId + '\')"/>编辑</a>';
+                            str = str + '<a href="#" onclick="deleteWarehouse(\'' + row.ItemId + '\')"><img class="iconImg" src = "/lib/extlib/themes/images/ext_icons/notes/note_delete.png" title="删除页面"  onclick="deleteWarehouse(\'' + row.ItemId + '\')"/>删除</a>';
                             return str;
                         }
                     }
             ]],
             fit: true,
             toolbar: "#toorBar",
+            treeField: "Name",
             rownumbers: true,
             idField:'ItemId',
             singleSelect: true,
@@ -94,7 +83,7 @@ function LoadDataGrid(type, myData) {
         });
     }
     else {
-        $('#grid_Main').datagrid('loadData', myData);
+        $('#grid_Main').treegrid('loadData', myData);
     }
 }
 
@@ -102,20 +91,9 @@ function LoadDataGrid(type, myData) {
 function Query() {
     var mOrganizationID = $('#organizationId').val();
     var beginTime = $('#startTime').datebox('getValue');
-    var endTime = $('#endTime').datebox('getValue');
-    var type = $('#comb_ProcessType').combobox('getValue');
     if (mOrganizationID == "") {
         $.messager.alert('警告', '请选择组织机构');
         return;
-    }
-    var mUrl = "";
-    var mdata = "";
-    if (type=='All') {
-        mUrl = "CheckWarehouse.aspx/GetInventoryAll";
-        mdata = "{mOrganizationID:'" + mOrganizationID + "',beginTime:'" + beginTime + "',endTime:'" + endTime + "'}";
-    } else  {
-        mUrl = "CheckWarehouse.aspx/GetInventory";
-        mdata = "{mOrganizationID:'" + mOrganizationID + "',beginTime:'" + beginTime + "',endTime:'" + endTime + "',wareHouseId:'" + wareHouseId + "'}";
     }
     var win = $.messager.progress({
         title: '请稍后',
@@ -123,16 +101,15 @@ function Query() {
     });
     $.ajax({
         type: "POST",
-        url: mUrl,
-        data: mdata,
+        url: "CheckWarehouse.aspx/GetInventoryAll",
+        data: "{mOrganizationID:'" + mOrganizationID + "',beginTime:'" + beginTime + "'}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
             $.messager.progress('close');
-            //mger.window('close');
             m_MsgData = jQuery.parseJSON(msg.d);
-            if (m_MsgData.total == 0) {
-                $('#grid_Main').datagrid('loadData', []);
+            if (m_MsgData.length == 0) {
+                $('#grid_Main').treegrid('loadData', []);
                 $.messager.alert('提示', '没有相关数据！');
             }
             else {
@@ -144,20 +121,28 @@ function Query() {
         },
         error: function handleError() {
             $.messager.progress('close');
-            $('#grid_Main').datagrid('loadData', []);
+            $('#grid_Main').treegrid('loadData', []);
             $.messager.alert('失败', '获取数据失败');
         }
     });
 }
 function refresh() {
     Query();
-    QueryWindow();
 }
 
 var saveId = '';
+var level = '';
+var m_parent = '';
+var mainId = '';
+var m_data = '';
 function editWarehouse(editContrastId) {
-    $('#grid_Main').datagrid('selectRecord', editContrastId);
-    var data = $('#grid_Main').datagrid('getSelected');
+    $('#grid_Main').treegrid('select', editContrastId);
+    var data = $('#grid_Main').treegrid('getSelected');
+    level = $('#grid_Main').treegrid('getLevel', editContrastId);
+    if (level==2) {
+        m_parent = $('#grid_Main').treegrid('getParent', editContrastId);
+        mainId = m_parent.ItemId;
+    }   
     $('#productionName').numberbox('setValue', data.Value);
     $('#editTime').datetimebox('setValue', data.TimeStamp);
     saveId = data.ItemId;
@@ -170,7 +155,7 @@ function save() {
     $.ajax({
         type: "POST",
         url: "CheckWarehouse.aspx/SaveWarehouse",
-        data: "{saveId:'" + saveId + "',saveValue:'"+saveValue+"',saveTimeStamp:'"+saveTimeStamp+"'}",
+        data: "{saveId:'" + saveId + "',saveValue:'" + saveValue + "',saveTimeStamp:'" + saveTimeStamp + "'}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
@@ -181,12 +166,41 @@ function save() {
                 refresh();
             }
         }
+    });
+    var mainValue = 0;
+    var m_value = 0;
+    if (level == 2) {
+        m_data = $('#grid_Main').treegrid('getChildren', mainId);
+        var length = m_data.length;
+        for (var i = 0; i < length; i++) {
+            if (m_data[i].ItemId != saveId) {
+                var sumValue = m_data[i].Value;
+                //sumValue = Number((a + b).toFixed(2));
+                mainValue = (Number(mainValue) + Number(sumValue)).toFixed(2);
+            }         
+        }
+        m_value = (Number(saveValue) + Number(mainValue)).toFixed(2);
+        $.ajax({
+            type: "POST",
+            url: "CheckWarehouse.aspx/SaveWarehouse",
+            data: "{saveId:'" + mainId + "',saveValue:'" + m_value + "',saveTimeStamp:'" + saveTimeStamp + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                var myData = msg.d;
+                if (myData == 1) {
+                    //$.messager.alert('提示', '保存成功成功！');
+                    //$('#editHouse').window('close');
+                    refresh();
+                }
+            }
         });
+    }
 }
 function deleteWarehouse(deleteContrastId) {
 
-    $('#grid_Main').datagrid('selectRecord', deleteContrastId);
-    var data = $('#grid_Main').datagrid('getSelected');
+    $('#grid_Main').treegrid('select', deleteContrastId);
+    var data = $('#grid_Main').treegrid('getSelected');
 
     var mId = data.ItemId;
     $.messager.confirm('提示', '确定要删除吗？', function (r) {
@@ -218,49 +232,40 @@ function deleteWarehouse(deleteContrastId) {
         }
     });
 }
-
-//var mger1 = Object;
 function QueryWindow() {
     var mOrganizationID = $('#organizationId').val();
     var beginTime = $('#startTimeWindow').datebox('getValue');
-    var endTime = $('#endTimeWindow').datebox('getValue');
-    var type = $('#comb_ProcessTypeWindow').combobox('getValue');
+    //var type = $('#comb_ProcessTypeWindow').combotree('getValue');
     if (mOrganizationID == "") {
         $.messager.alert('警告', '请选择组织机构');
         return;
     }
-    var amUrl = "";
-    var amdata = "";
-    if (type == 'All') {
-        amUrl = "CheckWarehouse.aspx/WindowWarehouseAll";
-        amdata = "{mOrganizationID:'" + mOrganizationID + "',beginTime:'" + beginTime + "',endTime:'" + endTime + "'}";
-    } else {
-        amUrl = "CheckWarehouse.aspx/WindowWarehouse";
-       amdata = "{mOrganizationID:'" + mOrganizationID + "',beginTime:'" + beginTime + "',endTime:'" + endTime + "',wareHouseWindowId:'" + wareHouseWindowId + "'}";
-    }
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
     $.ajax({
         type: "POST",
-        url: amUrl,
-        data: amdata,
+        url: "CheckWarehouse.aspx/WindowWarehouseAll",
+        data: '{ mOrganizationID: "' + mOrganizationID + '", beginTime: "' + beginTime + '" }',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
-            //mger1.window('close');
+            $.messager.progress('close');
             m_MsgData = jQuery.parseJSON(msg.d);
             if (m_MsgData.total == 0) {
-                $('#grid_MainWindow').datagrid('loadData', []);
+                $('#grid_MainWindow').treegrid('loadData', []);
                 $.messager.alert('提示', '没有相关数据！');
             }
             else {
                 mLoadDataGrid("last", m_MsgData);
             }
         },
-        //beforeSend: function (XMLHttpRequest) {
-        //    //alert('远程调用开始...');
-        //    mger1 = $.messager.alert('提示', "加载中...");
-        //},
+        beforeSend: function (XMLHttpRequest) {
+            win;
+        },
         error: function handleError() {
-            $('#grid_MainWindow').datagrid('loadData', []);
+            $('#grid_MainWindow').treegrid('loadData', []);
             $.messager.alert('失败', '获取数据失败');
         }
     });
@@ -271,101 +276,120 @@ function addFun() {
 }
 function mLoadDataGrid(type, myData) {
     if (type == "first") {
-        $('#grid_MainWindow').datagrid({
+        $('#grid_MainWindow').treegrid({
             columns: [[
-                    { field: 'Name', title: '仓库类型', width: 100 },
+                    { field: 'Name', title: '仓库类型', width: 130 },
                     {
                         field: 'Value', title: '库存值', width: 80, align: "left",
                         editor: { type: 'numberbox', options: { precision: 2 } }
                     },
-                    {
-                        field: 'TimeStamp', title: '启用时间', width: 160, align: "left",
-                        editor: { type: 'datetimebox' }
-                    }
+                    //{
+                    //    field: 'TimeStamp', title: '启用时间', width: 160, align: "left",
+                    //    editor: { type: 'datetimebox' }
+                    //},
+                    { field: 'CurrentInventory', title: '盘库基准数', width: 130 }
             ]],
             fit: true,
             toolbar: "toorBarWindows",
+            treeField: "Name",
+            idField: "LevelCode",
             rownumbers: true,
             singleSelect: true,
             striped: true,
-            data: [],
-            onClickCell: onClickCella
+            onContextMenu: onContextMenu,
+            onClickRow: onClickRow,
+            data: []
         });
     }
     else {
-        $('#grid_MainWindow').datagrid('loadData', myData);
+        $('#grid_MainWindow').treegrid('loadData', myData);
     }
 }
-$.extend($.fn.datagrid.methods, {
-    editCell: function (jq, param) {
-        return jq.each(function () {
-            var opts = $(this).datagrid('options');
-            var fields = $(this).datagrid('getColumnFields', true).concat($(this).datagrid('getColumnFields'));
-            for (var i = 0; i < fields.length; i++) {
-                var col = $(this).datagrid('getColumnOption', fields[i]);
-                col.editor1 = col.editor;
-                if (fields[i] != param.field) {
-                    col.editor = null;
-                }
-            }
-            $(this).datagrid('beginEdit', param.index);
-            for (var i = 0; i < fields.length; i++) {
-                var col = $(this).datagrid('getColumnOption', fields[i]);
-                col.editor = col.editor1;
-            }
-        });
+function onContextMenu(e, row) {
+    e.preventDefault();
+    $(this).treegrid('select', row.id);
+    $('#MenuId').menu('show', {
+        left: e.pageX,
+        top: e.pageY
+    });
+}
+var editingId;
+function onClickRow(clickRow) {
+    if (editingId != undefined) {
+        var t = $('#grid_MainWindow');
+        t.treegrid('endEdit', editingId);
+        editingId = clickRow.id;
+        $('#grid_MainWindow').treegrid('beginEdit', editingId);
+        return;
     }
-});
-var editIndexa = undefined;      //重置编辑索引行
-function endEditinga() {
-    if (editIndexa == undefined) { return 'true' }     //返回真允许编辑
-    if ($("#grid_MainWindow").datagrid('validateRow', editIndexa)) {
-        $("#grid_MainWindow").datagrid('endEdit', editIndexa);
-        editIndexa = undefined;
+    var row = $('#grid_MainWindow').treegrid('getSelected');
+    if (row) {
+        editingId = row.id
+        $('#grid_MainWindow').treegrid('beginEdit', editingId);
+    }
+}
+function endEditing() {
+    var t = $('#grid_MainWindow');
+    if (editingId == undefined) { return true; }
+    if ($("#grid_MainWindow").treegrid('validateRow', editingId)) {
+        $("#grid_MainWindow").treegrid('endEdit', editingId);
+        editingId = undefined;
         return 'true';
     } else {
         return 'false';
     }
-
-}
-function onClickCella(index, field) {
-    if (endEditinga()) {
-        $("#grid_MainWindow").datagrid('selectRow', index)
-                .datagrid('editCell', { index: index, field: field });
-        editIndexa = index;
-    }
-
 }
 function saveSectionType() {
-    endEditinga();
-    var windowData = $("#grid_MainWindow").datagrid('getData');
-
-   
-    //var jsonData = windowData.toJSONString();
-    //var str = obj.toJSONString();
-    var str = JSON.stringify(windowData);
-    //var length = windowData.length;
-    //for (var i = 0; i < length; i++) {
-    //    var windowId = windowData[i].Id;
-    //    var windowValue = windowData[i].Value;
-    //    var windowTimeStamp = windowData[i].TimeStamp;
-        $.ajax({
-            type: "POST",
-            url: "CheckWarehouse.aspx/AddWarehouse",
-            data: '{json:\''+str+'\'}',
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (msg) {
-                if (msg.d == "success"){
-                    $.messager.alert('提示', '保存成功！');
-                }
-                
-                $('#AddandEditor').window('close');
-                //refresh();
+    endEditing();
+    var windowData = $("#grid_MainWindow").treegrid('getData');
+    var mainData = $('#grid_Main').treegrid('getData');
+    var s_time = $('#startTimeWindow').datetimebox('getValue');
+    var count = windowData.length;
+    for (var i = 0; i < count; i++) {
+        var windowLength = windowData[i].children.length
+        var m_windowValue = 0;
+        for (var j = 0; j < windowLength; j++) {
+            var windowValue = windowData[i].children[j].Value;
+            var windowId = windowData[i].Id;
+            if (windowValue != '') {
+                m_windowValue = (Number(m_windowValue) + Number(windowValue)).toFixed(2);
+                windowData[i].Value = (Number(m_windowValue)).toFixed(2);
+                windowData[i].children[j].TimeStamp = s_time;
             }
-        });       
+        }
+        if (windowData[i].Value == "") {
+            windowData[i].Value = windowData[i].CurrentInventory;
+            windowData[i].TimeStamp = s_time;
+            for (var n = 0; n < windowData[i].children.length; n++) {
+                if (windowData[i].children[n].Value == "") {
+                    windowData[i].children[n].Value = windowData[i].children[n].CurrentInventory;
+                    windowData[i].children[n].TimeStamp = s_time;
+                }
+            }
+        }
+        windowData[i].TimeStamp = s_time;
     }
-    //refresh()
+    for (var i = 0; i < windowData.length; i++) {
+        if (windowData[i].Value == undefined) {
+            $.messager.alert('警告', '第一次盘库，请不要留空');
+            return;
+        }
+    }
+    var str = JSON.stringify(windowData);
+    $.ajax({
+        type: "POST",
+        url: "CheckWarehouse.aspx/AddWarehouse",
+        data: '{json:\'' + str + '\'}',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+            if (msg.d == "success") {
+                $.messager.alert('提示', '保存成功！');
+            }
+            $('#AddandEditor').window('close');
+        }
+    });
+}
 
 
 

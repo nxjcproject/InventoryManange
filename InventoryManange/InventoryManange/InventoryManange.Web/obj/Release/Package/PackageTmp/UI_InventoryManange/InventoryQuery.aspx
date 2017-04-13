@@ -19,13 +19,15 @@
     <script type="text/javascript" src="js/page/InventoryQuery.js" charset="utf-8"></script>
 </head>
 <body>
-   <div class="easyui-layout" data-options="fit:true,border:false">
-        <div data-options="region:'west',border:false " style="width: 150px;">
+    <div class="easyui-layout" data-options="fit:true,border:false">
+        <div data-options="region:'west',split:true" style="width: 180px;">
             <ucl:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
-       
-         <div id="toolbar_ReportTemplate" style="display: none;">
-            <table>
+        <!-- 图表开始 -->
+        <div data-options="region:'center',border:false">
+            <div class="easyui-layout" data-options="fit:true,border:false">
+               <div  class="easyui-panel queryPanel" data-options="region:'north', border:true, collapsible:false, split:false" style="height: 45px;">
+          <table>
                 <tr>
                     <td>
                         <table>
@@ -34,10 +36,10 @@
                                 <td style="width: 100px;">
                                     <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:false, readonly:true" style="width: 100px;" />
                                 </td>
-                                  <td>仓库名称</td>
+                                  <%--<td>仓库名称</td>
                                 <td style="width: 100px;">
                                     <input id="comb_ProcessType" class="easyui-combobox" style="width: 100px;"data-options="panelHeight:'auto'" />
-                                </td>                           
+                                </td> --%>                          
                                 <td>&nbsp;</td>
                                   <td>查询日期</td>
                                 <td style="width: 100px;">
@@ -47,10 +49,6 @@
                                     <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
                                         onclick="QueryReportFun();">查询</a>
                                 </td>
-                           <%--     <td>
-                                    <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
-                                        onclick="GetCenterControlReportTagInfoFun();">标签查询</a>
-                                </td>--%>
                                 <td>
                                     <input id="TextBox_OrganizationId" style="width: 10px; visibility: hidden;" />
                                 </td>
@@ -59,40 +57,25 @@
                     </td>
                 </tr>
             </table>
-         </div>
-       <div id="reportTable" class="easyui-panel" data-options="region:'center', border:true, collapsible:true, split:false">
-            <table id="gridMain_ReportTemplate"></table>
         </div>
-       </div>
-    
-    <%-- <div id="toolbar_formulaDatagrid" style="display: normal;height:35px;">              
-                        <table style="padding-left:20px">
-                            <tr>      
-                                <td style="padding-left:350px; font-size:18px">库  存  信  息  报  表（<input id="reportTime" class="easyui-textbox" required="required"readonly="readonly" style="width:80px"/>）</td>                                                                               
-                                <td style="padding-left:32px">
-                                    <a href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel',plain:true" onclick="ExportFileFun();">导出</a>
-                                </td> 
-                                 <td style="padding-left:40px">
-                                    <a href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-printer',plain:true" onclick="PrintFileFun();">打印</a>
-                                </td>                                                              
-                            </tr>
-                        </table>                                                                         
-                 </div>    --%>
-     
-    <%--<script>
-        function onOrganisationTreeClick(myNode) {
-            //alert(myNode.text);
-            m_organizationId = myNode.OrganizationId;
-            $('#TextBox_OrganizationId').attr('value', m_organizationId);  //textbox('setText', myNode.OrganizationId);
-            $('#TextBox_OrganizationText').textbox('setText', myNode.text);
-            //$('#TextBox_OrganizationType').textbox('setText', myNode.OrganizationType);
-            PrcessTypeItem(m_organizationId);
-        }
-        </script>--%>
-    
-    <form id="form1" runat="server">
-    <div>    
+        <div data-options="region:'center'"title="库存信息">
+               <table id="gridMain_ReportTemplate" class="easyui-treegrid" data-options="idField:'id',treeField:'WarehouseName',rownumbers:true,singleSelect:true,fit:true">
+                <thead>
+                    <tr>
+                    <th data-options="field:'WarehouseName',width:160">仓库名称</th>
+                    <th data-options="field:'benchmarksTime',width:120,align:'center'">基准时间</th>
+                    <th data-options="field:'benchmarksValue',width:80,align:'right'">基准库存</th>
+                     <th data-options="field:'InputWarehouse',width:80,align:'right'">入库量</th>
+                         <th data-options="field:'OutputWarehouse',width:80,align:'right'">出库量</th>
+				        <th data-options="field:'CurrentInventory',width:80,align:'right'">当前库存</th>
+                        </tr>
+                    </thead>
+            </table>
+        </div>
+                </div>
+            </div>
+        <!-- 图表结束 -->
     </div>
-    </form>
+    <form id="form_Main" runat="server"></form>
 </body>
 </html>

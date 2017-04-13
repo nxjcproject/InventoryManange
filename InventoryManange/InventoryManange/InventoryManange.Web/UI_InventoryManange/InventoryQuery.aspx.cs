@@ -20,7 +20,7 @@ namespace InventoryManange.Web.UI_InventoryManange
             {
                 ////////////////////调试用,自定义的数据授权
 #if DEBUG
-                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf", "zc_nxjc_qtx", "zc_nxjc_tsc_tsf", "zc_nxjc_ychc", "zc_nxjc_znc_znf", "zc_nxjc_ychc_lsf" };
+                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf","zc_nxjc_tsc_tsf","zc_nxjc_znc_znf", "zc_nxjc_ychc_lsf"};
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
                 mPageOpPermission = "0000";
 #elif RELEASE
@@ -41,8 +41,9 @@ namespace InventoryManange.Web.UI_InventoryManange
         public static string GetInventory(string organizationID, string warehouseName, DateTime startTime)
         {
             DataTable table = InventoryQueryService.GetInventoryInformation(organizationID, warehouseName, startTime);
-            string json=EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
-            return json;
+            return EasyUIJsonParser.TreeGridJsonParser.DataTableToJsonByLevelCode(table, "FormulaLevelCode");
+            //string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
+            //return json;
         }
         
     }

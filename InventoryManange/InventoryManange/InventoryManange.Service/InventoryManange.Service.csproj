@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InventoryManange\CheckWarehouseService.cs" />
-    <Compile Include="InventoryManange\InventoryQueryService.cs" />
+    <Compile Include="InventoryManange\InventoryQueryService.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="InventoryManange\WarehouseConfigService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
