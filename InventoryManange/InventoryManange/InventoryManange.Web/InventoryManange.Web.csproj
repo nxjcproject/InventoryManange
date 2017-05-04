@@ -1600,7 +1600,9 @@
     <Content Include="UI_InventoryManange\js\page\InventoryQuery.js" />
     <Content Include="UI_InventoryManange\js\page\WarehouseConfig.js" />
     <Content Include="UI_InventoryManange\WarehouseConfigIndication.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

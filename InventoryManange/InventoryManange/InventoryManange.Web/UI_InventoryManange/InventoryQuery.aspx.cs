@@ -42,8 +42,6 @@ namespace InventoryManange.Web.UI_InventoryManange
         {
             DataTable table = InventoryQueryService.GetInventoryInformation(organizationID, warehouseName, startTime);
             return EasyUIJsonParser.TreeGridJsonParser.DataTableToJsonByLevelCode(table, "FormulaLevelCode");
-            //string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
-            //return json;
         }
         
     }
