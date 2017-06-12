@@ -61,3 +61,17 @@ E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\Inve
 E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
 E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
 E:\2017-04-07后银川出差工作\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb
+C:\Users\feng\Desktop\分品种\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.dll
+C:\Users\feng\Desktop\分品种\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.pdb
+C:\Users\feng\Desktop\分品种\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.dll
+C:\Users\feng\Desktop\分品种\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.pdb
+C:\Users\feng\Desktop\分品种\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
+C:\Users\feng\Desktop\分品种\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
+C:\Users\feng\Desktop\分品种\InventoryManange-master\InventoryManange-master\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb
+E:\20170407项目文件（银川）\InventoryManange\InventoryManange\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.dll
+E:\20170407项目文件（银川）\InventoryManange\InventoryManange\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.pdb
+E:\20170407项目文件（银川）\InventoryManange\InventoryManange\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.dll
+E:\20170407项目文件（银川）\InventoryManange\InventoryManange\InventoryManange\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.pdb
+E:\20170407项目文件（银川）\InventoryManange\InventoryManange\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
+E:\20170407项目文件（银川）\InventoryManange\InventoryManange\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
+E:\20170407项目文件（银川）\InventoryManange\InventoryManange\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb
