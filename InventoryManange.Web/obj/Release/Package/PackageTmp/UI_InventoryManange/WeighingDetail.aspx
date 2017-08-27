@@ -85,22 +85,15 @@
         <%--图表结束--%>
     </div>
     <%--过磅明细--%>
-    <div id="WeighingWindow" class="easyui-window" title="过磅明细" data-options="modal:true,closed:true,iconCls:'icon-save',minimizable:false,maximizable:false,collapsible:false,resizable:false" style="width:1200px;height:500px;padding:5px 5px 5px 5px"> 
-      <div class="easyui-layout"data-options="fit:true,border:false" ">              
-          <div id="weighTable" class="easyui-panel" data-options="region:'center',border:true, collapsible:false, split:false">
+    <div id="WeighingWindow" class="easyui-window" title="过磅明细" data-options="modal:true,closed:true,iconCls:'icon-save',minimizable:false,maximizable:false,collapsible:false,resizable:false" style="width:1000px;height:400px;padding:5px 5px 5px 5px"> 
+      <div class="easyui-layout" data-options="fit:true,border:false" ">              
+          <div id="weighTable" class="easyui-panel" data-options="fit:true,border:false, collapsible:false, split:false">
             <table id="grid_WeighingDetail" class="easyui-datagrid"></table>
-          </div>
-          <div data-options="region:'south'" style="height:36px;padding:2px 2px 2px 20px;">
-              <table>
-                  <tr>                     
-                      <td style="width:1000px"></td>
-                      <td>
-                           <a id="exportedInfo" href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel'" onclick="ExportFileDetail()">导出</a>
-                      </td>           
-                  </tr>
-              </table>
-          </div>                         
+          </div>          
       </div>
+        <div style="position: absolute;top:1px; left: 850px;" >
+            <a id="exportedInfo" href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel'" onclick="ExportFileDetail()">导出</a>
+        </div>             
    </div>
     <%--日统计--%>
     <div id="WeighingCountday" class="easyui-window" title="日统计" data-options="modal:true,closed:true,iconCls:'icon-save',minimizable:false,maximizable:false,collapsible:false,resizable:false" style="width:810px;height:400px;padding:10px 10px 10px 10px"> 

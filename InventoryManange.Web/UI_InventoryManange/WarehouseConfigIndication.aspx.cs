@@ -24,7 +24,7 @@ namespace InventoryManange.Web.UI_InventoryManange
                 List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf", "zc_nxjc_tsc", "zc_nxjc_qtx_tys", "zc_nxjc_qtx_efc" };
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
                 this.OrganisationTree_ProductionLine.LeveDepth =5;
-                mPageOpPermission = "0000";
+                mPageOpPermission = "1111";
 #elif RELEASE
 #endif
                  this.OrganisationTree_ProductionLine.Organizations = GetDataValidIdGroup("ProductionOrganization"); //向web用户控件传递数据授权参数

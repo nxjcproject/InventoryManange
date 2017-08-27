@@ -18,7 +18,7 @@ namespace InventoryManange.Web.UI_InventoryManange
             {
                 ////////////////////调试用,自定义的数据授权
 #if DEBUG
-                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf", "zc_nxjc_tsc_tsf", "zc_nxjc_znc_znf", "zc_nxjc_ychc_lsf" };
+                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf", "zc_nxjc_tsc_tsf", "zc_nxjc_znc_znf", "zc_nxjc_qtx", "zc_nxjc_ychc" };
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
                 mPageOpPermission = "0000";
 #elif RELEASE

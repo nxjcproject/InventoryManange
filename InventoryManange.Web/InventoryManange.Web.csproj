@@ -65,7 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="WebStyleBaseForEnergy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\WebStyleBaseForEnergy.dll</HintPath>
+      <HintPath>..\..\..\WebStyleBaseForEnergy_开发用\WebStyleBaseForEnergy\bin\Debug\WebStyleBaseForEnergy.dll</HintPath>
     </Reference>
     <Reference Include="WebUserContorls.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

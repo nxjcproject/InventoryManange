@@ -67,3 +67,7 @@ C:\Users\Administrator\Desktop\InventoryManange\InventoryManange\InventoryManang
 C:\Users\Administrator\Desktop\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.dll
 C:\Users\Administrator\Desktop\InventoryManange\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Infrastructure\bin\Debug\InventoryManange.Infrastructure.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Infrastructure\bin\Debug\InventoryManange.Infrastructure.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.pdb

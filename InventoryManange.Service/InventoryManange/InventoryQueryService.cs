@@ -15,7 +15,7 @@ namespace InventoryManange.Service.InventoryManange
         {
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
-            string mySql = @"select Name as text,LevelCode AS FormulaLevelCode,Id,HighLimit,LowLimit from [dbo].[inventory_Warehouse] 
+            string mySql = @"select Name as text,LevelCode AS FormulaLevelCode,Id,HighLimit,LowLimit, AlarmEnabled from [dbo].[inventory_Warehouse] 
                                        where OrganizationID=@organizationId
                                       ";
             SqlParameter sqlParameter = new SqlParameter("@organizationId", organizationId);
@@ -24,24 +24,25 @@ namespace InventoryManange.Service.InventoryManange
         }
         public static DataTable GetInventoryTime(string organizationID,string startTimeWindow,string endTimeWindow)
         {
-            string ID;
-            DataTable table, idInformation;
-             idInformation = GetProcessTypeInfo(organizationID);//获取组织机构对应的各个库的id信息
-            if (idInformation.Rows.Count == 0)
-            {
-                table=null;
-                return table;
-            }
-            else
-            {
-            ID = Convert.ToString(idInformation.Rows[0][2]);//取其中一个库的id
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
-            string mySql = @"select distinct TimeStamp  from [dbo].[inventory_CheckWarehouse] where TimeStamp>@startTimeWindow and TimeStamp<@endTimeWindow and WarehouseId=@wareHouseId order by timestamp desc";
-            SqlParameter[] myParameter = { new SqlParameter("@startTimeWindow", startTimeWindow), new SqlParameter("@endTimeWindow", endTimeWindow),new SqlParameter("@wareHouseId",ID)};
-             table = dataFactory.Query(mySql, myParameter);
-            return table;
+            string mySql = @"select distinct A.TimeStamp  
+                                from [dbo].[inventory_CheckWarehouse]  A, [NXJC].[dbo].[inventory_Warehouse] B
+                                where A.TimeStamp>@startTimeWindow and A.TimeStamp<@endTimeWindow 
+                                and A.WarehouseId = B.Id
+                                and B.OrganizationID = @OrganizationID
+                                order by timestamp desc";
+            SqlParameter[] myParameter = { new SqlParameter("@startTimeWindow", startTimeWindow), new SqlParameter("@endTimeWindow", endTimeWindow), new SqlParameter("@OrganizationID", organizationID) };
+            try
+            {
+                DataTable table = dataFactory.Query(mySql, myParameter);
+                return table;
             }
+            catch
+            {
+                return null;
+            }
+
         }
         public static DataTable GetInventoryInformation(string organizationID, string warehouseName, DateTime startTime,DateTime endTime)
         {
@@ -49,6 +50,7 @@ namespace InventoryManange.Service.InventoryManange
             string warehouseNameNew = warehouseName;
             Decimal highLimit = 0;
             Decimal lowLimit = 0;
+            bool AlarmEnabled = false;
 
             string FormulaLevelCode = "";
             string Id = "";
@@ -81,6 +83,7 @@ namespace InventoryManange.Service.InventoryManange
             table.Columns.Add("highLimit", Type.GetType("System.Decimal"));
             table.Columns.Add("lowLimit", Type.GetType("System.Decimal"));
             table.Columns.Add("offSet", Type.GetType("System.Decimal"));
+            table.Columns.Add("AlarmEnabled", Type.GetType("System.String"));
             if (warehouseNameNew == "全部")
             {
                 for (int i = 0; i < idTable.Rows.Count; i++)
@@ -108,6 +111,7 @@ namespace InventoryManange.Service.InventoryManange
                     getOutputWarehouseTable = GetOutputWarehouse(getBenchmarksInformationTable, endTimeNew, organizationIdNew);//出库信息
                     outputQuantity = GetInputQuantity(endTimeNew, getBenchmarksInformationTable, organizationIdNew, getOutputWarehouseTable);//出库量
                     currentInventory = benchmarksValue + inputQuantity - outputQuantity;//当前库存
+                    AlarmEnabled = idTable.Rows[i]["AlarmEnabled"] != DBNull.Value ? (bool)idTable.Rows[i]["AlarmEnabled"] : false;
                     object obHighLimit = idTable.Rows[i][3];
                     object obLowLimit = idTable.Rows[i][4];
                        try
@@ -155,6 +159,7 @@ namespace InventoryManange.Service.InventoryManange
                     dr["highLimit"] = highLimit;
                     dr["lowLimit"] = lowLimit;
                     dr["offSet"] = offSet;
+                    dr["AlarmEnabled"] = AlarmEnabled == true ? "1" : "0";               //增加是否报警判断               
                     table.Rows.Add(dr);
                 }
             }
@@ -287,10 +292,13 @@ namespace InventoryManange.Service.InventoryManange
                 {
                     string connectionString = ConnectionStringFactory.NXJCConnectionString;
                     ISqlServerDataFactory dataFactoryNew = new SqlServerDataFactory(connectionString);
+
+                    string m_DataBaseName = GetDataBaseNameByOrganizationId(organizationID, dataFactoryNew);
+
                     string mySql = @"select sum({0}) as InputSigle from {1}.[dbo].[HistoryDCSIncrement]
                                        where @BenchmarksTime<[vDate] and [vDate]<@endTime";
                     SqlParameter[] myParameter = { new SqlParameter("@endTime", endTime), new SqlParameter("@BenchmarksTime", BenchmarksTime) };
-                    DataTable table = dataFactoryNew.Query(string.Format(mySql, variableIdName, organizationID), myParameter);
+                    DataTable table = dataFactoryNew.Query(string.Format(mySql, variableIdName, m_DataBaseName), myParameter);
                     try
                     {
                         inputSigleNygl = Convert.ToDecimal(table.Rows[0][0]) * Convert.ToDecimal(multiple) + Convert.ToDecimal(offset);
@@ -303,6 +311,30 @@ namespace InventoryManange.Service.InventoryManange
                 }
             }
             return inputNygl;
+        }
+        private static string GetDataBaseNameByOrganizationId(string myOrganizationID, ISqlServerDataFactory myDataFactory)
+        {
+            string mySql = @"SELECT A.MeterDatabase
+                FROM [NXJC].[dbo].[system_Database] A, [NXJC].[dbo].[system_Organization] B
+                where B.OrganizationID = '{0}'
+                and A.DataBaseID = B.DataBaseID";
+            mySql = string.Format(mySql, myOrganizationID);
+            try
+            {
+                DataTable table = myDataFactory.Query(mySql);
+                if (table != null && table.Rows.Count > 0)
+                {
+                    return table.Rows[0]["MeterDatabase"].ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            catch
+            {
+                return "";
+            }
         }
         //获取出库总信息
         private static DataTable GetOutputWarehouse(DataTable BenchmarksInformation, DateTime endTime, string organizationID)

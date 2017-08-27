@@ -269,3 +269,18 @@ D:\nxjc AllProject\InventoryManange\InventoryManange\InventoryManange.Web\obj\De
 D:\nxjc AllProject\InventoryManange\InventoryManange\InventoryManange.Web\obj\Debug\InventoryManange.Web.dll
 D:\nxjc AllProject\InventoryManange\InventoryManange\InventoryManange.Web\obj\Debug\InventoryManange.Web.pdb
 C:\Users\Administrator\Desktop\InventoryManange\InventoryManange\InventoryManange.Web\bin\UpDownLoadFiles.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\InventoryManange.Web.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\InventoryManange.Web.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\InventoryManange.Infrastructure.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\InventoryManange.Service.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\UpDownLoadFiles.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\InventoryManange.Infrastructure.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\InventoryManange.Service.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\obj\Debug\InventoryManange.Web.csprojResolveAssemblyReference.cache
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\obj\Debug\InventoryManange.Web.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\obj\Debug\InventoryManange.Web.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\WebStyleBaseForEnergy.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\mDbDataAdaper.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\InternalMemeryRestore.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\WebStyleBaseForEnergy.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\mDbDataAdaper.pdb

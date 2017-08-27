@@ -180,3 +180,10 @@ D:\nxjc AllProject\InventoryManange\InventoryManange\InventoryManange.Service\bi
 D:\nxjc AllProject\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
 D:\nxjc AllProject\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
 D:\nxjc AllProject\InventoryManange\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb

@@ -15,16 +15,19 @@
       <publishTime>08/03/2017 16:15:41</publishTime>
     </File>
     <File Include="bin/InternalMemeryRestore.dll">
-      <publishTime>08/03/2017 16:15:41</publishTime>
+      <publishTime>04/18/2013 08:53:38</publishTime>
     </File>
     <File Include="bin/InventoryManange.Infrastructure.dll">
-      <publishTime>08/20/2017 16:04:18</publishTime>
+      <publishTime>08/27/2017 13:47:43</publishTime>
     </File>
     <File Include="bin/InventoryManange.Service.dll">
-      <publishTime>08/20/2017 16:04:18</publishTime>
+      <publishTime>08/27/2017 13:47:44</publishTime>
     </File>
     <File Include="bin/InventoryManange.Web.dll">
-      <publishTime>08/20/2017 16:04:19</publishTime>
+      <publishTime>08/27/2017 14:24:30</publishTime>
+    </File>
+    <File Include="bin/mDbDataAdaper.dll">
+      <publishTime>04/04/2016 12:02:42</publishTime>
     </File>
     <File Include="bin/SqlServerDataAdapter.dll">
       <publishTime>08/03/2017 16:15:41</publishTime>
@@ -33,7 +36,7 @@
       <publishTime>08/11/2017 11:07:15</publishTime>
     </File>
     <File Include="bin/WebStyleBaseForEnergy.dll">
-      <publishTime>08/03/2017 16:15:41</publishTime>
+      <publishTime>07/06/2017 16:05:41</publishTime>
     </File>
     <File Include="bin/WebUserContorls.Web.dll">
       <publishTime>08/03/2017 16:15:41</publishTime>
@@ -4596,7 +4599,7 @@
       <publishTime>08/03/2017 16:15:41</publishTime>
     </File>
     <File Include="UI_InventoryManange/InventoryQuery.aspx">
-      <publishTime>08/03/2017 16:15:41</publishTime>
+      <publishTime>08/15/2017 23:24:54</publishTime>
     </File>
     <File Include="UI_InventoryManange/js/common/MergeCell.js">
       <publishTime>08/03/2017 16:15:41</publishTime>
@@ -4608,16 +4611,16 @@
       <publishTime>08/03/2017 16:15:41</publishTime>
     </File>
     <File Include="UI_InventoryManange/js/page/InventoryQuery.js">
-      <publishTime>08/03/2017 16:15:41</publishTime>
+      <publishTime>08/27/2017 12:05:13</publishTime>
     </File>
     <File Include="UI_InventoryManange/js/page/MaterialBalance.js">
       <publishTime>06/20/2017 12:18:44</publishTime>
     </File>
     <File Include="UI_InventoryManange/js/page/MaterialHouseDefinition.js">
-      <publishTime>08/03/2017 16:15:41</publishTime>
+      <publishTime>08/27/2017 14:08:46</publishTime>
     </File>
     <File Include="UI_InventoryManange/js/page/WarehouseConfig.js">
-      <publishTime>08/03/2017 16:15:41</publishTime>
+      <publishTime>08/27/2017 14:20:22</publishTime>
     </File>
     <File Include="UI_InventoryManange/js/page/WeighingDetail.js">
       <publishTime>08/20/2017 15:14:51</publishTime>
@@ -4629,13 +4632,13 @@
       <publishTime>08/03/2017 16:15:41</publishTime>
     </File>
     <File Include="UI_InventoryManange/WarehouseConfigIndication.aspx">
-      <publishTime>08/03/2017 16:15:41</publishTime>
+      <publishTime>08/27/2017 14:08:46</publishTime>
     </File>
     <File Include="UI_InventoryManange/WeighingDetail.aspx">
-      <publishTime>08/20/2017 15:51:14</publishTime>
+      <publishTime>08/21/2017 19:29:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/20/2017 16:04:23</publishTime>
+      <publishTime>08/27/2017 14:24:36</publishTime>
     </File>
   </ItemGroup>
 </Project>

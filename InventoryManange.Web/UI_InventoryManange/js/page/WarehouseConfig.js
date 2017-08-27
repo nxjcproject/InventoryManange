@@ -289,7 +289,7 @@ function editWorkingDefine(IsEdit, editContrastId) {
         //mWarehouseid = data.WarehouseId;
 
 
-        $('#name').textbox('setText', data.Name);
+        $('#name').combobox('setValue', data.WarehouseId);
         mWarehousenameId = data.WarehouseId;
         $('#variableid').textbox('setText',data.VariableId);
         mVariableid = data.VariableId;
