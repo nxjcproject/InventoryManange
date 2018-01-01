@@ -284,3 +284,17 @@ C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange
 C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\InternalMemeryRestore.dll
 C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\WebStyleBaseForEnergy.pdb
 C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Web\bin\mDbDataAdaper.pdb
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\InventoryManange.Web.dll
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\InventoryManange.Web.pdb
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\InventoryManange.Infrastructure.dll
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\InventoryManange.Service.dll
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\UpDownLoadFiles.dll
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\mDbDataAdaper.dll
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\InternalMemeryRestore.dll
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\InventoryManange.Infrastructure.pdb
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\InventoryManange.Service.pdb
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\WebStyleBaseForEnergy.pdb
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\bin\mDbDataAdaper.pdb
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\obj\Debug\InventoryManange.Web.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\obj\Debug\InventoryManange.Web.dll
+C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\obj\Debug\InventoryManange.Web.pdb

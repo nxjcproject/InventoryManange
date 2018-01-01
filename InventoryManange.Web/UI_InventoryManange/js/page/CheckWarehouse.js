@@ -78,7 +78,7 @@ function LoadDataGrid(type, myData) {
             columns: [[
                     { field: 'Name', title: '仓库类型', width: 150 },                
                     {
-                        field: 'Value', title: '库存值', width: 80, align: "right",
+                        field: 'Value', title: '库存值', width: 80, align: "left",
                     },
                     {
                         field: 'TimeStamp', title: '盘库时间', width: 130, align: "left",

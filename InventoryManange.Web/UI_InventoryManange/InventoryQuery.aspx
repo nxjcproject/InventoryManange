@@ -29,21 +29,20 @@
             <div id="toolBar_ReportTemplate" style ="display: none;">
                 <table>
                     <tr>
-                        <td style ="height:25px;">分厂名称</td>
-                        <td style="width: 100px;">
+                        <td style="width: 50px; text-align: right;">组织机构</td>
+                        <td>
                             <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:false, readonly:true" style="width: 100px;" />
                         </td>
-                        <td>&nbsp;</td>
-                        <td>基准时间</td>
-                        <td style="width: 100px;">
+                        <td style="width: 50px; text-align: right;">基准时间</td>
+                        <td>
                             <input id="sbox_QueryStartDate" type="text" class="easyui-searchbox" style="width: 150px;" />
                         </td>
-                        <td>盘库时间</td>
-                        <td style="width: 100px;">
+                        <td style="width: 50px; text-align: right;">盘库时间</td>
+                        <td>
                             <input id="sbox_QueryEndDate" type="text" class="easyui-searchbox" style="width: 150px;" />
                         </td>
                         <td>
-                            <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
+                            <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'"
                                 onclick="QueryReportFun();">查询</a>
                         </td>
                     </tr>
