@@ -180,3 +180,13 @@ C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange
 C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.csprojResolveAssemblyReference.cache
 C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.dll
 C:\工作\编程\恒拓软件\三层框架V3.1\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Release\InventoryManange.Service.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Release\InventoryManange.Service.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Release\EasyUIJsonParser.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Release\InventoryManange.Infrastructure.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Release\SqlServerDataAdapter.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Release\UpDownLoadFiles.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Release\InventoryManange.Infrastructure.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.csprojResolveAssemblyReference.cache
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\obj\Release\InventoryManange.Service.pdb

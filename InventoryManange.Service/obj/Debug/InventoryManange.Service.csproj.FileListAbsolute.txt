@@ -194,3 +194,10 @@ C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\In
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Service.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\bin\Debug\InventoryManange.Infrastructure.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.csprojResolveAssemblyReference.cache
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Service\obj\Debug\InventoryManange.Service.pdb

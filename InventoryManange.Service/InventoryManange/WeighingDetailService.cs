@@ -24,20 +24,22 @@ namespace InventoryManange.Service.InventoryManange
             if (mSelectTime == "firstWeight")
             {
                 //因物料编号导出时的格式问题，故在物料编号前加个"A"，导致后面的过磅明细和日统计的查询中要先截取A后边的字符串
-                string mySql = @"select ('A'+[Material]) as [Material],[MaterialName],[ggxh]
-                                ,sum(case when [Type]= 0 then [Suttle] 
-                                          when [Type]= 5 and [reservationchar7]= 11 then [Suttle] end) as inputValue
-                                ,sum(case when [Type]= 3 and [sales_gblx]= 'DE' then [Suttle]
-                                          when [Type]= 3 and [sales_gblx]= 'RD' then -[Suttle]
-                                          when [Type]= 5 and [reservationchar7]= 10 then [Suttle] end) as outputValue
-                                ,count([Suttle]) as vehicleValue
-                               from [extern_interface].[dbo].[WB_WeightNYGL]
-                              where [OrganizationID]=@mOrganizationId
-                                and [MaterialName] like '%' + @mAterialName + '%'
-                                and (case when [weightdate]<[lightdate] then [weightdate] else [lightdate] end)>@mStartTime
-                                and (case when [weightdate]<[lightdate] then [weightdate] else [lightdate] end)<@mEndTime
-                                group by [Material],[MaterialName],[ggxh]
-                                order by [Material]";
+                string mySql = @"select ('A'+A.[Material]) as [Material],A.[MaterialName],A.[ggxh]
+                                ,sum(case when A.[Type]= 0 then A.[Suttle] 
+                                          when A.[Type]= 5 and A.[reservationchar7]= 11 then A.[Suttle] end) as inputValue
+                                ,sum(case when A.[Type]= 3 and A.[sales_gblx]= 'DE' then A.[Suttle]
+                                          when A.[Type]= 3 and A.[sales_gblx]= 'RD' then -A.[Suttle]
+                                          when A.[Type]= 5 and A.[reservationchar7]= 10 then A.[Suttle] end) as outputValue
+                                ,count(A.[Suttle]) as vehicleValue
+                               from [extern_interface].[dbo].[WB_WeightNYGL] A,
+                                    [dbo].[inventory_MaterialContrast] B
+                              where A.[OrganizationID]=@mOrganizationId
+                                and A.[MaterialName] like '%' + @mAterialName + '%'
+                                and (case when A.[weightdate]<A.[lightdate] then A.[weightdate] else A.[lightdate] end)>@mStartTime
+                                and (case when A.[weightdate]<A.[lightdate] then A.[weightdate] else A.[lightdate] end)<@mEndTime
+                                and A.[Material]=B.[MaterialID]
+                                group by A.[Material],A.[MaterialName],A.[ggxh]
+                                order by A.[Material]";
                 SqlParameter[] sqlParameter = { new SqlParameter("@mOrganizationId", mOrganizationId),
                                                 new SqlParameter("@mAterialName", mAterialName),
                                                 new SqlParameter("@mStartTime", mStartTime),
@@ -46,20 +48,22 @@ namespace InventoryManange.Service.InventoryManange
             }
             else if (mSelectTime == "endWeight")
             {
-                string mySql = @"select ('A'+[Material]) as [Material],[MaterialName],[ggxh]
-                                ,sum(case when [Type]= 0 then [Suttle] 
-                                          when [Type]= 5 and [reservationchar7]= 11 then [Suttle] end) as inputValue
-                                ,sum(case when [Type]= 3 and [sales_gblx]= 'DE' then [Suttle]
-                                          when [Type]= 3 and [sales_gblx]= 'RD' then -[Suttle]
-                                          when [Type]= 5 and [reservationchar7]= 10 then [Suttle] end) as outputValue
-                                ,count([Suttle]) as vehicleValue
-                               from [extern_interface].[dbo].[WB_WeightNYGL]
-                              where [OrganizationID]=@mOrganizationId
-                                and [MaterialName] like '%' + @mAterialName + '%'
-                                and (case when [weightdate]>[lightdate] then [weightdate] else [lightdate] end)>@mStartTime
-                                and (case when [weightdate]>[lightdate] then [weightdate] else [lightdate] end)<@mEndTime
-                                group by [Material],[MaterialName],[ggxh]
-                                order by [Material]";
+                string mySql = @"select ('A'+A.[Material]) as [Material],A.[MaterialName],A.[ggxh]
+                                ,sum(case when A.[Type]= 0 then [Suttle] 
+                                          when A.[Type]= 5 and A.[reservationchar7]= 11 then A.[Suttle] end) as inputValue
+                                ,sum(case when A.[Type]= 3 and A.[sales_gblx]= 'DE' then A.[Suttle]
+                                          when A.[Type]= 3 and A.[sales_gblx]= 'RD' then -A.[Suttle]
+                                          when A.[Type]= 5 and A.[reservationchar7]= 10 then A.[Suttle] end) as outputValue
+                                ,count(A.[Suttle]) as vehicleValue
+                               from [extern_interface].[dbo].[WB_WeightNYGL] A,
+                                    [dbo].[inventory_MaterialContrast] B
+                              where A.[OrganizationID]=@mOrganizationId
+                                and A.[MaterialName] like '%' + @mAterialName + '%'
+                                and (case when A.[weightdate]>A.[lightdate] then A.[weightdate] else A.[lightdate] end)>@mStartTime
+                                and (case when A.[weightdate]>A.[lightdate] then A.[weightdate] else A.[lightdate] end)<@mEndTime
+                                and A.[Material]=B.[MaterialID]
+                                group by A.[Material],A.[MaterialName],A.[ggxh]
+                                order by A.[Material]";
                 SqlParameter[] sqlParameter = { new SqlParameter("@mOrganizationId", mOrganizationId),
                                                 new SqlParameter("@mAterialName", mAterialName),
                                                 new SqlParameter("@mStartTime", mStartTime),

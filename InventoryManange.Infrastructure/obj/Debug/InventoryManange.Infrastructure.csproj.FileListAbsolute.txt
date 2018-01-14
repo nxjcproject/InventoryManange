@@ -76,3 +76,8 @@ C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\In
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.dll
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Infrastructure\bin\Debug\InventoryManange.Infrastructure.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Infrastructure\bin\Debug\InventoryManange.Infrastructure.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.csprojResolveAssemblyReference.cache
+D:\nxjc AllProject\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Infrastructure\obj\Debug\InventoryManange.Infrastructure.pdb

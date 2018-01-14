@@ -298,3 +298,17 @@ C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\In
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\obj\Debug\InventoryManange.Web.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\obj\Debug\InventoryManange.Web.dll
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\InventoryManange-master\InventoryManange.Web\obj\Debug\InventoryManange.Web.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\InventoryManange.Web.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\InventoryManange.Web.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\InventoryManange.Infrastructure.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\InventoryManange.Service.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\UpDownLoadFiles.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\mDbDataAdaper.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\InternalMemeryRestore.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\InventoryManange.Infrastructure.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\InventoryManange.Service.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\WebStyleBaseForEnergy.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\bin\mDbDataAdaper.pdb
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\obj\Debug\InventoryManange.Web.csprojResolveAssemblyReference.cache
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\obj\Debug\InventoryManange.Web.dll
+D:\nxjc AllProject\InventoryManange\InventoryManange.Web\obj\Debug\InventoryManange.Web.pdb

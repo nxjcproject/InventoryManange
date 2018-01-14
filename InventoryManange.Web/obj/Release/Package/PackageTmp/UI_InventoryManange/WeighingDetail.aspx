@@ -34,16 +34,16 @@
                     <td>
                         <table>
                             <tr>
-                                <td style="width:60px"> 组织机构：</td>
+                                <td style="width:60px; text-align: right;">组织机构</td>
                                 <td>
                                     <input id="organizationName" class="easyui-textbox" style="width: 100px;" readonly="readonly"/>
                                     <input id="organizationId" readonly="readonly" style="display: none;"/>
                                 </td>                                                                                        
-                                <td>开始时间</td>
+                                <td style="width:60px; text-align: right;">开始时间</td>
                                 <td>
                                     <input id="startTime" type="text" class="easyui-datetimebox" style="width:150px;" required="required"/>
                                 </td>
-                                <td>查询时间</td>
+                                <td style="width:60px; text-align: right;">查询时间</td>
                                 <td>
                                     <select class="easyui-combobox" id="selectTime" name="delay" style="width:130px" data-options="editable:false,panelHeight:'auto'">
                                        <option value="firstWeight">第一次过磅时间</option>
@@ -61,17 +61,17 @@
                     <td>
                         <table>    
                              <tr>                              
-                                <td> 物料名称：</td>
+                                <td style="width:60px; text-align: right;">物料名称</td>
                                 <td>
                                     <input id="MaterialName" class="easyui-textbox" style="width: 100px;"/>
                                 </td>
-                                <td>结束时间</td>
+                                <td style="width:60px; text-align: right;">结束时间</td>
                                 <td>
                                     <input id="endTime" type="text" class="easyui-datetimebox" style="width:150px;" required="required"/>
                                 </td>
-                                <td style="width:182px;"></td>
+                                <td style="width:194px;"></td>
                                 <td>
-                                    <a id="exportedFile" href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel'" onclick="ExportFileFun()">导出</a>
+                                    <a id="exportedFile" href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel',plain:true" onclick="ExportFileFun()">导出</a>
                                 </td>                                                                                                                                        
                             </tr>                       
                         </table>
@@ -92,7 +92,7 @@
           </div>          
       </div>
         <div style="position: absolute;top:1px; left: 850px;" >
-            <a id="exportedInfo" href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel'" onclick="ExportFileDetail()">导出</a>
+            <a id="exportedInfo" href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel',plain:true" onclick="ExportFileDetail()">导出</a>
         </div>             
    </div>
     <%--日统计--%>
@@ -102,11 +102,11 @@
             <div>
                 <table>
                     <tr>                    
-                        <td>开始时间</td>
+                        <td style="width:60px; text-align: right;">开始时间</td>
                         <td>
                              <input id="StartTimeWindow" type="text" class="easyui-datetimebox" style="width:150px;"/>
                         </td>    
-                        <td>结束时间</td>
+                        <td style="width:60px; text-align: right;">结束时间</td>
                          <td>
                              <input id="EndTimeWindow" type="text" class="easyui-datetimebox" style="width:150px;"/>
                         </td>            
@@ -115,7 +115,7 @@
                         </td>
                         <td style="width:100px"></td>
                         <td>
-                            <a id="exportedBtn" href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel'" onclick="ExportFileFunDay()">导出</a>
+                            <a id="exportedBtn" href="#" class="easyui-linkbutton" data-options="iconCls:'ext-icon-page_white_excel',plain:true" onclick="ExportFileFunDay()">导出</a>
                         </td>  
                     </tr>
                 </table>         

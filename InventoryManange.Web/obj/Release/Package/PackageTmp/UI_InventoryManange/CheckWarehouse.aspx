@@ -34,7 +34,7 @@
                <div id="toorbar" class="easyui-panel" data-options="region:'north', border:true, collapsible:false, split:true,disabled:true" style="height: 69px;">
                     <table>
                     <tr>
-                        <td>组织机构:</td>
+                        <td style="width: 60px; text-align: right;">组织机构</td>
                         <td >                               
                             <input id="organizationName" class="easyui-textbox" readonly="readonly"style="width:80px" />  
                             <input id="organizationId" readonly="readonly" style="display: none;" />             
@@ -43,11 +43,11 @@
                         <td style="width: 100px;">
                             <input id="comb_ProcessType" class="easyui-combotree" style="width: 130px;"data-options="panelHeight:'auto'" />
                         </td> --%>                                     
-                        <td>开始时间：</td>
+                        <td style="width: 60px; text-align: right;">开始时间</td>
                         <td>
                              <input id="startTime" type="text" class="easyui-datetimebox" style="width:150px;" required="required"/>
                         </td> 
-                        <td>结束时间：</td>
+                        <td style="width: 60px; text-align: right;">结束时间</td>
                         <td>
                              <input id="endTime" type="text" class="easyui-datetimebox" style="width:150px;" required="required"/>
                         </td>                                       
